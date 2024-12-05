@@ -1,27 +1,61 @@
-import { Card, CardMedia, Button, Typography, CardActions, CardContent } from '@mui/material';
+import { Card, CardMedia, Button, Typography, CardActions, CardContent, Grid, CardActionArea, Box, Rating, Stack, Chip } from '@mui/material';
+import React from 'react';
+import { useState } from 'react';
 
 function Bookcard({ book }) {
+
+  const [value, setValue] = React.useState(book.stars);
+  const handleClick = () => {
+    console.log('You clicked learn more.');
+  };
+
+
   return (
-    <Card sx={{ maxWidth: 700 , maxHeight: 600 }}>
-      {/* Display the book image using CardMedia */}
-      <CardMedia
-        component="img"
-        height="300"
-        image={book.img} 
-        alt={book.name}  
-      />
+    
+    <Card sx={{ maxWidth: 200, height: "100%" }}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="300"
+          image={book.img} 
+          alt={book.name}  
+        />
 
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">{book.name}</Typography>
-        <Typography variant="body2" color="text.secondary">{book.author}</Typography>
-      </CardContent>
+        <CardContent>
 
-      <CardActions>
-        <Button size="small">Start</Button>
-        <Button size="small">Learn More</Button> 
-      </CardActions>
+          <Stack direction="row" spacing={1}>
+            {book.genres.map((genre, index) => (
+              <Chip label={genre} key={index} variant="outlined" />
+            ))}
+            
+          </Stack>
+
+          <Typography gutterBottom variant="h5" component="div">{book.name}</Typography>
+          <Typography variant="body2" color="text.secondary">{book.author}</Typography>
+        </CardContent>
+
+        </CardActionArea>
+
+  
+
+        <Box sx={{ '& > legend': { mt: 2 } }}>
+          <Rating
+            name="simple-controlled"
+            value={value}
+            onChange={(event, newValue) => {
+            setValue(newValue);
+            }}
+            />
+        </Box>
+
+        <CardActions>
+            
+          <Button size="small" onClick={handleClick}>Learn More</Button> 
+        </CardActions>
     </Card>
+    
   );
+  
 }
 
 export default Bookcard;

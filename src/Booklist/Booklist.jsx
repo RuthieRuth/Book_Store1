@@ -15,19 +15,14 @@ function Booklist (){
         .then(data => setBooks(data))
     },[])
     return (
-       /*  <div>
-        {books.map((book) => (<Bookcards key={book.id}/>))}
-        </div> */
-
+     
         <Container>
-            <Grid container spacing={4}>
+            <Grid container spacing={3}>
             {books.map(book => (
-                <Grid item key={book.id} lg={2} > 
+                <Grid item key={book.id} xs={2.4} sm={2.4} md={2.4} > 
                    <Bookcard book={book}/>
                 </Grid>
             ))}
-             
-
              </Grid>
         </Container>
     )
