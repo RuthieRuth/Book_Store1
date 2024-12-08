@@ -1,7 +1,7 @@
 {
   "books": [
     {
-      "id": 1,
+      "id": "1",
       "author": "Antoine de Saint-Exupéry",
       "name": "The Little Prince",
       "genres": [
@@ -15,7 +15,7 @@
       "img": "https://upload.wikimedia.org/wikipedia/en/0/05/Littleprince.JPG"
     },
     {
-      "id": 2,
+      "id": "2",
       "author": "Walter Isaacson",
       "name": "Steve Jobs",
       "genres": [
@@ -29,7 +29,7 @@
       "img": "https://upload.wikimedia.org/wikipedia/en/e/e4/Steve_Jobs_by_Walter_Isaacson.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "author": "George Orwell",
       "name": "1984",
       "genres": [
@@ -43,7 +43,7 @@
       "img": "https://images.booksense.com/images/935/524/9780451524935.jpg"
     },
     {
-      "id": 4,
+      "id": "4",
       "author": "J.K. Rowling",
       "name": "Harry Potter and the Sorcerer's Stone",
       "genres": [
@@ -66,8 +66,18 @@
       "start": null,
       "end": null,
       "stars": "5",
-      "id": 5,
+      "id": "5",
       "img": "https://www.davidjpphillips.com/wp-content/uploads/2023/08/highonlife_copy-195x300.jpg"
+    },
+    {
+      "id": "6bb0",
+      "title": " kbkh",
+      "author": "jgjg ",
+      "image": "khk ",
+      "genres": " ",
+      "started": " khkhg",
+      "finished": " ",
+      "rating": 0
     }
   ]
 }

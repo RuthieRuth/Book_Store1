@@ -1,6 +1,6 @@
-import { Card, CardMedia, Button, Typography, CardActions, CardContent, Grid, CardActionArea, Box, Rating, Stack, Chip } from '@mui/material';
+import { Card, CardMedia, Button, Typography, CardActions, CardContent, CardActionArea, Box, Rating, Stack, Chip } from '@mui/material';
 import React from 'react';
-import { useState } from 'react';
+
 
 function Bookcard({ book }) {
 
@@ -22,37 +22,37 @@ function Bookcard({ book }) {
         />
 
         <CardContent>
+            {/* <Stack direction="row" spacing={1}>
+              {book.genres.map((genre, index) => (
+                <Chip label={genre} key={index} variant="outlined" />
+              ))}
+            </Stack> */}
 
-          <Stack direction="row" spacing={1}>
-            {book.genres.map((genre, index) => (
-              <Chip label={genre} key={index} variant="outlined" />
-            ))}
-            
-          </Stack>
+            <Stack direction="row" spacing={1}>
+                {(book.genres && Array.isArray(book.genres) ? book.genres : []).map((genre, index) => (
+                    <Chip label={genre} key={index} variant="outlined" />
+                ))}
+            </Stack>
 
-          <Typography gutterBottom variant="h5" component="div">{book.name}</Typography>
-          <Typography variant="body2" color="text.secondary">{book.author}</Typography>
+            <Typography gutterBottom variant="h5" component="div">{book.name}</Typography>
+            <Typography variant="body2" color="text.secondary">{book.author}</Typography>
         </CardContent>
 
         </CardActionArea>
-
-  
-
-        <Box sx={{ '& > legend': { mt: 2 } }}>
-          <Rating
-            name="simple-controlled"
-            value={value}
-            onChange={(event, newValue) => {
-            setValue(newValue);
-            }}
-            />
+          <Box sx={{ '& > legend': { mt: 2 } }}>
+            <Rating
+              name="simple-controlled"
+              value={value}
+              onChange={(event, newValue) => {
+              setValue(newValue);
+              }}
+              />
         </Box>
 
         <CardActions>
-            
           <Button size="small" onClick={handleClick}>Learn More</Button> 
         </CardActions>
-    </Card>
+     </Card>
     
   );
   
